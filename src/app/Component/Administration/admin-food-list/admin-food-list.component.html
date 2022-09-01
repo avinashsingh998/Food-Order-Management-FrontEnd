@@ -1,0 +1,31 @@
+<div class="container">
+
+
+
+    <table class = "food-list">
+        <tr>
+            <th> Food </th>
+            <th> Food Name</th>
+            <th> Price </th>
+            <th> tags </th>
+            <th> Update </th>
+            <th> delete </th>
+            
+        </tr>
+        <tr *ngFor="let food of foods">
+
+            <td> <img src = "{{food.imageUrl}}" alt = "{{food.name}}" width = "80pt" height = "60pt"> </td>
+            <td>{{food.name}}</td>
+            <td> {{food.price | number}} </td>
+            <td>
+                <span class = 'tags' *ngFor =  "let tag of food.tags"> {{tag}} </span>
+            
+            </td>
+            <td><a routerLink = "/administration/home/Update/{{food.id}}"> Update </a></td>
+            <td><a routerLink = "Delete/{{food.id}}"></a>Delete</td>
+
+        </tr>
+
+    </table>
+
+</div>

@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+    color: rgb(45, 4, 121);
+    background: rgb(226, 220, 220);
+
+}
+
+a:hover{
+    background-color: #7762b3;
+    color: white;
+}
+
+.tags{
+    
+    text-align: center;
+    padding-top: 10pt;
+    padding-bottom: 7pt;
+}
+
+.tag{
+    margin-left: 8pt;
+    border-radius: 10rem;
+    padding-left: 4pt;
+    padding-right: 4pt;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    font-size: 12pt;
+   
+}

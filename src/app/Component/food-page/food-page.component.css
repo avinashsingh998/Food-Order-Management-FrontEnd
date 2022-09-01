@@ -1,0 +1,29 @@
+.container1{
+    
+    padding-top: 2em;
+    
+    padding-left:10% ;
+    color:red;
+    
+}
+
+
+.favorite{
+
+    font-size: 30px;
+   
+    width:40px
+}
+
+.favorite:hover{
+    
+    
+    cursor: pointer;
+}
+
+.origin span{
+    background-color: whitesmoke;
+    color: gray;
+    font-size: 17pt;
+
+}

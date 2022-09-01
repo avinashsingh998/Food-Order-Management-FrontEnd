@@ -1,0 +1,14 @@
+<div class="searchBar">
+
+    <input
+     class="searchitem" 
+     id="searchItem"
+      type="search"
+       placeholder="Search Foods...."
+       [(ngModel)]="searchItem"
+       (change) = "search();"
+       />
+
+    <button (click) = "search();"  class="searchbtn" id="search-button" type="button" >Search
+    </button>
+</div>

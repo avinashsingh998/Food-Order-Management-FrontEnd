@@ -1,0 +1,82 @@
+<div class="main">
+
+    <div  class="left">
+                    <div class="heading">
+                           <h2> Add New Food</h2>
+
+                    </div>
+                    
+                     <form   class="form" enctype="multipart/form-data">
+                        <div class="form-group ">
+                            <label for="foodname">Food Name</label>
+                            <input [(ngModel)]="food.name"  [ngModelOptions]="{standalone: true}" type="text" class="form-control customClass2" id="foodname"  placeholder="Enter food name">
+                            </div><br>
+
+                            <div class="form-group">
+                                <label for="foodprice">Price </label>
+                                <input type="number"  [(ngModel)] = "food.price" [ngModelOptions]="{standalone: true}" class="form-control customClass2" id="foodprice" >
+                              </div><br>
+                             
+                             
+                              <div class="form-group">
+                                <label for="foodcooktime">Cook - Time </label>
+                                <input type="text"  [(ngModel)] = "food.cookTime" [ngModelOptions]="{standalone: true}" class="form-control customClass2" id="foodcooktime" placeholder="Type cook time in minutes..." >
+                              </div><br>
+
+
+                              <div class="form-group">
+                                <label for="form-select">Add Origins</label>
+                                <select (change)="addOrigins($event)"  class="form-select" aria-label="Default select example" >
+                                    <option selected>Add Origins</option>
+                                   <option *ngFor="let origin of origins" value=" {{origin}} "> {{origin}} </option>
+                                </select><br>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="form-select">Select tags for your food</label>
+                                    <select   [(ngModel)] = "food.tags"   [ngModelOptions]="{standalone: true}" class="form-select" aria-label="Default select example" multiple >
+                                       <option *ngFor="let tag of tags" value="{{tag}}">{{tag}}</option>
+                                    </select><br>
+                                    </div>
+    
+    
+                             <div *ngIf="msg" class="msg">{{msg}}</div><br>
+                             
+                                <div class="form-group customClass1">
+                            <label for="imageinput">Add food image &nbsp;</label>
+                            <input (change) = "updateImage($event)" type="file" class="form-control-file" id="imageinput">
+                          </div><br>
+                          <button (click) = "addFood()" class="btn btn-primary">Add Food</button>
+
+
+
+
+                     </form>
+     </div>
+
+                    
+     <div class="right">
+        <div class="samplecard">
+                <img src = "{{food.imageUrl}}" alt = "{{food.name}}" height = "60%" width = "100%">
+                <div class="content">
+                    <div class = "name-price"> 
+
+                    <div class="name">
+                        {{food.name}}
+                    </div>
+
+                    <div class ="price">
+                        {{food.price | currency}}
+                    </div>
+                    </div>
+                    <div class =" favStar">   <ngb-rating [(rate)]="food.star" [readonly]='true'></ngb-rating>
+                        <div class="favorite">{{food.favorite?'❤️':' &nbsp; ♡'}}</div>    
+                    </div>
+
+                <div class="origin"> <span class = "removeOrigin" *ngFor="let origin of food.origins" ><a (click) = "removeOrigin(origin)" active = "false"> {{origin}},</a> &nbsp;</span></div>
+                <div class="clock-time"> 🕑<span> {{food.cookTime}} </span></div>
+                </div>
+            </div>
+     </div>
+                
+</div>
